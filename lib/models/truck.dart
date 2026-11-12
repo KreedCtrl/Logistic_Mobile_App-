@@ -1,10 +1,10 @@
 import 'enums.dart';
 
-// Tabelul "trucks" - echipamentul unui Carrier sau Owner Operator.
+
 class Truck {
   final int id;
-  final int ownerId;          // Carrier sau Owner Operator
-  final int? driverId;        // null pentru Owner Operator (el e soferul)
+  final int ownerId;
+  final int? driverId;
   final String unitNumber;
   final String? plateNumber;
   final EquipmentType equipmentType;

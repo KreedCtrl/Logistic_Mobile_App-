@@ -1,6 +1,6 @@
 import 'enums.dart';
 
-// Tabelul "orders" - comanda postata de un Customer.
+
 class Order {
   final int id;
   final int customerId;
@@ -17,7 +17,6 @@ class Order {
 
   final OrderStatus status;
 
-  // se completeaza dupa ce Customer-ul accepta o aplicare
   final int? assignedToId;
   final int? truckId;
 
@@ -34,7 +33,7 @@ class Order {
     this.weight,
     this.description,
     required this.price,
-    this.status = OrderStatus.open,   // valoare implicita, ca DEFAULT 'OPEN' in SQL
+    this.status = OrderStatus.open,  
     this.assignedToId,
     this.truckId,
     required this.createdAt,

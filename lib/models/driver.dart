@@ -1,7 +1,6 @@
-// Tabelul "drivers" - soferii unui Carrier.
 class Driver {
   final int id;
-  final int carrierId;        // id-ul User-ului cu rol CARRIER
+  final int carrierId;
   final String name;
   final String? phone;
   final String? licenseNumber;

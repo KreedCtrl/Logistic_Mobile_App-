@@ -1,12 +1,10 @@
 import 'enums.dart';
 
-// Tabelul "applications" - un Carrier / Owner Operator aplica la o comanda.
-// Clasa se numeste OrderApplication ca sa nu fie confundata cu "aplicatia" Flutter.
 class OrderApplication {
   final int id;
   final int orderId;
-  final int applicantId;      // Carrier sau Owner Operator
-  final int truckId;          // cu ce camion vrea sa ia comanda
+  final int applicantId;
+  final int truckId; 
   final double? proposedPrice;
   final String? message;
   final ApplicationStatus status;
