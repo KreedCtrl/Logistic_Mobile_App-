@@ -1,6 +1,3 @@
-// Valorile fixe din baza de date (coloanele cu CHECK).
-// Fiecare enum are un "value" = exact textul salvat in baza de date.
-
 enum UserRole {
   customer('CUSTOMER'),
   carrier('CARRIER'),
@@ -8,6 +5,12 @@ enum UserRole {
 
   const UserRole(this.value);
   final String value;
+
+  String get label => switch (this) {
+        UserRole.customer => 'Customer',
+        UserRole.carrier => 'Carrier',
+        UserRole.ownerOperator => 'Owner Operator',
+      };
 
   static UserRole fromValue(String value) =>
       values.firstWhere((e) => e.value == value);
