@@ -189,14 +189,21 @@ class _AccountTile extends StatelessWidget {
             PopupMenuButton<_AccountAction>(
               onSelected: onAction,
               itemBuilder: (_) => [
-                if (account.isLoggedIn)
-                  const PopupMenuItem(
-                    value: _AccountAction.logout,
-                    child: Text('Deconecteaza'),
+                PopupMenuItem(
+                  value: _AccountAction.logout,
+                  enabled: account.isLoggedIn,
+                  child: const ListTile(
+                    leading: Icon(Icons.logout),
+                    title: Text('Iesi din cont'),
+                    subtitle: Text('Contul ramane in lista'),
                   ),
+                ),
                 const PopupMenuItem(
                   value: _AccountAction.remove,
-                  child: Text('Sterge de pe dispozitiv'),
+                  child: ListTile(
+                    leading: Icon(Icons.delete_outline),
+                    title: Text('Sterge de pe dispozitiv'),
+                  ),
                 ),
               ],
             ),

@@ -32,6 +32,21 @@ void main() {
     expect(find.text('Parola'), findsOneWidget);
   });
 
+  testWidgets('Login: Iesi din cont din meniu pastreaza contul',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const LogisticsApp());
+
+    expect(find.byIcon(Icons.check_circle), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.more_vert).first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Iesi din cont'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Fresh Foods SRL'), findsOneWidget);
+    expect(find.byIcon(Icons.check_circle), findsNothing);
+  });
+
   testWidgets('Login: butonul de inregistrare deschide alegerea rolului',
       (WidgetTester tester) async {
     await tester.pumpWidget(const LogisticsApp());
